@@ -31,8 +31,8 @@ export const MovieList = ({ movies, deleteMovie }) => {
         color="primary"
         size="small"
       >
-        <ToggleButton value="title">Sort by Title</ToggleButton>
-        <ToggleButton value="rating">Sort by Rating</ToggleButton>
+        <ToggleButton value="title">Alfabetisk ordning</ToggleButton>
+        <ToggleButton value="rating">Betygsordning</ToggleButton>
       </ToggleButtonGroup>
 
       <List>

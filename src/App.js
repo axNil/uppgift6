@@ -6,9 +6,9 @@ import { Divider, Stack, Typography, Box } from "@mui/material";
 
 function App() {
   const [movies, setMovies] = useState([
-    { id: 1, title: "Star Wars III", rating: 2 },
-    { id: 2, title: "Star Wars IV", rating: 3 },
-    { id: 3, title: "Star Wars XXVI", rating: 5 },
+    { id: 1, title: "Star Wars III", rating: 1 },
+    { id: 2, title: "Star Wars XVI", rating: 3 },
+    { id: 3, title: "The Room", rating: 5 },
   ]);
   const [nextId, setNextId] = useState(4);
 
@@ -24,9 +24,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Typography variant="h4" mb={4}>
-          Movie List
+        <Typography variant="h4" mb={2}>
+          Min filmlista
         </Typography>
+        <Divider />
       </header>
       <main>
         <Box>

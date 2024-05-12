@@ -35,16 +35,16 @@ export const AddMovieForm = ({ addMovie }) => {
       width={{ xs: 300, sm: 400, md: 400 }}
       gap={1}
     >
-      <Typography>Add Movie to the list</Typography>
+      <Typography>Lägg till en film</Typography>
       <TextField
-        label="Movie Title*"
+        label="Titel*"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         autoComplete="off"
         fullWidth
       />
       <Box display="flex" alignItems="center" gap={1}>
-        <Typography component="legend">Rating: </Typography>
+        <Typography component="legend">Betyg: </Typography>
         <Rating
           defaultValue={null}
           size="large"
@@ -54,11 +54,11 @@ export const AddMovieForm = ({ addMovie }) => {
       </Box>
 
       <Button type="submit" variant="contained">
-        Add Movie
+        Spara film
       </Button>
       {inputError && (
         <Alert variant="outlined" severity="error">
-          You need to enter both a title and a rating.
+          Du måste lägga till både titel och betyg.
         </Alert>
       )}
     </Stack>
