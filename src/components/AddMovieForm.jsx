@@ -7,7 +7,6 @@ import {
   Box,
   Typography,
   Alert,
-  Divider,
 } from "@mui/material";
 
 export const AddMovieForm = ({ addMovie }) => {
@@ -41,6 +40,7 @@ export const AddMovieForm = ({ addMovie }) => {
         label="Movie Title*"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        autoComplete="off"
         fullWidth
       />
       <Box display="flex" alignItems="center" gap={1}>
