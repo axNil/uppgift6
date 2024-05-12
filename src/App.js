@@ -28,7 +28,7 @@ function App() {
           Movie List
         </Typography>
       </header>
-      <body>
+      <main>
         <Box>
           <Stack display="flex" justifyContent="center" alignItems="center">
             <AddMovieForm addMovie={addMovie} />
@@ -38,7 +38,7 @@ function App() {
             </Box>
           </Stack>
         </Box>
-      </body>
+      </main>
     </div>
   );
 }
