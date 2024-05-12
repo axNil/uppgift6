@@ -1,9 +1,49 @@
-import { Box, Typography, Rating, List } from "@mui/material";
-export const MovieList = () => {
+import { List, Box, ToggleButtonGroup, ToggleButton } from "@mui/material";
+import { MovieListItem } from "./MovieListItem";
+import React, { useState, useMemo } from "react";
+
+export const MovieList = ({ movies, deleteMovie }) => {
+  const [sortType, setSortType] = useState("title");
+
+  const sortedMovies = useMemo(() => {
+    return [...movies].sort((a, b) => {
+      if (sortType === "title") {
+        return a.title.localeCompare(b.title);
+      } else {
+        // sort by rating, highest rating first
+        return b.rating - a.rating;
+      }
+    });
+  }, [movies, sortType]);
+
+  const handleSortChange = (event, newSortType) => {
+    if (newSortType !== null) {
+      setSortType(newSortType);
+    }
+  };
+
   return (
-    <Box>
-      <Typography>HEllo</Typography>
-      <Rating name="read-only" value={2} readOnly />
+    <Box mt={2}>
+      <ToggleButtonGroup
+        value={sortType}
+        exclusive
+        onChange={handleSortChange}
+        color="primary"
+        size="small"
+      >
+        <ToggleButton value="title">Sort by Title</ToggleButton>
+        <ToggleButton value="rating">Sort by Rating</ToggleButton>
+      </ToggleButtonGroup>
+
+      <List>
+        {sortedMovies.map((movie) => (
+          <MovieListItem
+            key={movie.id}
+            data={movie}
+            onDelete={() => deleteMovie(movie.id)}
+          />
+        ))}
+      </List>
     </Box>
   );
 };
